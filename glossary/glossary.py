@@ -1,6 +1,7 @@
 from yaml import load, FullLoader
 from textdistance import cosine
 from pkg_resources import resource_stream
+from collections import Counter
 
 stream = resource_stream(__name__, 'data/glossary.yml')
 raw = load(stream, Loader=FullLoader)
@@ -9,18 +10,13 @@ Terms = {term['slug']: term for term in raw}
 __language__ = 'en'
 
 def get_languages_available():
-    lang_dict = {}
+    lang_dict = Counter()
 
-    for term in Terms.items():
-        keys = list(term[1].keys())
+    for _, values in Terms.items():
+        keys = list(values.keys())
         for key in keys:
             if key != 'slug' and key != 'ref':
-                try:
-                    lang_dict[key] =  lang_dict[key] + 1
-                except KeyError:
-                    lang_dict[key] = 1
-                except:
-                    print('Error in getting languages')
+                lang_dict.update({key: 1})
 
     return lang_dict
 
