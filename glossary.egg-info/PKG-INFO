@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: glossary
+Version: 0.2
+Summary: Python package to define technical terms
+Home-page: UNKNOWN
+Author: ian-flores
+Author-email: iflores.siaca@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.7,<4.0

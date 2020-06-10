@@ -1,0 +1,10 @@
+README.md
+setup.py
+glossary/__init__.py
+glossary/glossary.py
+glossary.egg-info/PKG-INFO
+glossary.egg-info/SOURCES.txt
+glossary.egg-info/dependency_links.txt
+glossary.egg-info/top_level.txt
+glossary/.github/workflows/build.yml
+glossary/.github/workflows/release.yml
