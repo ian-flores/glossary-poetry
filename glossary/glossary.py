@@ -24,15 +24,17 @@ def get_languages_available():
 
     return lang_dict
 
-def set_language(language):
+def set_language(language, verbose=False):
     langs_available = get_languages_available()
 
     if language not in langs_available.keys():
-        print('Currently we don\'t support this language.\nFeel free to submit definitions to this language at https://github.com/gvwilson/glossary')
+        if verbose:
+            print('Currently we don\'t support this language.\nFeel free to submit definitions to this language at https://github.com/gvwilson/glossary')
         return None
     else:
         global __language__
-        print(f'Current Language: {__language__}\nNew Language: {language}')
+        if verbose:
+            print(f'Current Language: {__language__}\nNew Language: {language}')
         __language__ = language
 
 def __search_word__(slug):
